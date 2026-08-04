@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A guided tutorial for learning the Hebrew prayer Elohai Neshama.">
+  <meta name="application-version" content="1.0.0">
   <title>Elohai Neshama · A Guided Prayer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -229,6 +230,7 @@
 
     @media (max-width: 820px) {
       .site-header nav { display: none; }
+      .section { padding-top: 30px; }
       .hero { grid-template-columns: 1fr; padding-top: 60px; }
       .hero::after { display: none; }
       .prayer-card { border-radius: 130px 130px 24px 24px; }
@@ -334,7 +336,7 @@
 
   <footer>
     <span class="hebrew" lang="he" dir="rtl">אֱלֹהַי נְשָׁמָה</span>
-    <span>Created for thoughtful morning practice.</span>
+    <span>Created for thoughtful morning practice. · Version 1.0.0</span>
   </footer>
 
   <dialog class="studio" id="studio">
@@ -615,7 +617,16 @@
       renderAllLines();
       updateStudio(publishedRecordings.has(key) ? 'Local replacement deleted — using published recording' : 'Recording deleted');
     });
-    document.getElementById('studio-launch').addEventListener('click', () => { updateStudio(); studio.showModal(); });
+    document.getElementById('studio-launch').addEventListener('click', () => {
+      const password = window.prompt('Enter the Recording Studio password:');
+      if (password === null) return;
+      if (password !== '4321') {
+        window.alert('Incorrect password.');
+        return;
+      }
+      updateStudio();
+      studio.showModal();
+    });
     document.getElementById('studio-close').addEventListener('click', () => studio.close());
     studio.addEventListener('click', (event) => { if (event.target === studio) studio.close(); });
     document.addEventListener('keydown', (event) => {

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A guided tutorial for learning the Hebrew prayer Elohai Neshama.">
-  <meta name="application-version" content="1.0.1">
+  <meta name="application-version" content="1.1.0">
   <title>Elohai Neshama · A Guided Prayer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -171,7 +171,9 @@
       transition: border .2s, transform .2s, background .2s;
     }
     .lesson:hover { transform: translateY(-2px); border-color: var(--sage-deep); background: var(--white); }
-    .lesson::before { content: counter(line, decimal-leading-zero); position: absolute; right: 24px; top: 50%; transform: translateY(-50%); direction: ltr; color: var(--terracotta); font-size: 12px; font-weight: 600; letter-spacing: .1em; }
+    .line-play { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); display: grid; min-width: 44px; min-height: 44px; place-items: center; border: 0; border-radius: 50%; background: transparent; color: var(--terracotta); cursor: pointer; }
+    .line-play::before { content: counter(line, decimal-leading-zero); direction: ltr; font-size: 12px; font-weight: 600; letter-spacing: .1em; }
+    .line-play:hover, .line-play:focus-visible, .line-play.playing { background: var(--sage); outline: none; }
     .lesson .line { font-size: 42px; line-height: 1.35; text-align: right; word-spacing: .22em; }
     .syllable-word { display: inline-block; margin-block: 3px; padding: .02em .15em .09em; border-radius: 8px; }
     .syllable-word.color-one { background: #dfe9df; }
@@ -213,6 +215,11 @@
     .studio-progress { height: 5px; margin: 27px 0 36px; border-radius: 99px; background: var(--cream); overflow: hidden; }
     .studio-progress span { display: block; height: 100%; width: 0; border-radius: inherit; background: var(--terracotta); transition: width .25s; }
     .studio-count { margin: 0; color: var(--terracotta); font-size: 12px; font-weight: 600; letter-spacing: .13em; text-align: center; text-transform: uppercase; }
+    .recording-type { display: flex; justify-content: center; gap: 6px; margin: 0 auto 24px; }
+    .recording-type button { padding: 9px 20px; border: 1px solid rgba(24, 51, 49, .18); background: var(--paper); cursor: pointer; }
+    .recording-type button:first-child { border-radius: 999px 0 0 999px; }
+    .recording-type button:last-child { margin-left: -7px; border-radius: 0 999px 999px 0; }
+    .recording-type button[aria-pressed="true"] { position: relative; border-color: var(--ink); background: var(--ink); color: white; }
     .studio-word { min-height: 100px; margin: 8px 0 10px; font-size: clamp(50px, 10vw, 78px); line-height: 1.25; text-align: center; }
     .studio-status { min-height: 25px; margin: 0 0 25px; color: var(--muted); text-align: center; }
     .studio-audio { display: block; width: min(100%, 410px); height: 44px; margin: -10px auto 26px; }
@@ -237,7 +244,7 @@
       .meaning-grid { grid-template-columns: 1fr; }
       .section-head { align-items: flex-start; flex-direction: column; }
       .lesson { grid-template-columns: 1fr; gap: 13px; padding: 19px 58px 19px 15px; }
-      .lesson::before { right: 15px; }
+      .line-play { right: 7px; }
       .steps { grid-template-columns: 1fr; }
     }
     @media (max-width: 520px) {
@@ -274,26 +281,32 @@
 
       <div class="learn-list">
         <div class="lesson">
+          <button class="line-play" type="button" aria-label="Play recording of line 1"></button>
           <span class="line hebrew" lang="he" dir="rtl">אֱ‐לֹ‐הַי, נְ‐שָׁ‐מָה שֶׁ‐נָּ‐תַ‐תָּ בִּי טְ‐הוֹ‐רָה הִיא.</span>
         </div>
 
         <div class="lesson">
+          <button class="line-play" type="button" aria-label="Play recording of line 2"></button>
           <span class="line hebrew" lang="he" dir="rtl">אַ‐תָּה בְ‐רָא‐תָהּ, אַ‐תָּה יְ‐צַרְ‐תָּהּ, אַ‐תָּה נְ‐פַחְ‐תָּהּ בִּי,</span>
         </div>
 
         <div class="lesson">
+          <button class="line-play" type="button" aria-label="Play recording of line 3"></button>
           <span class="line hebrew" lang="he" dir="rtl">וְ‐אַ‐תָּה מְ‐שַׁמְּ‐רָהּ בְּ‐קִרְ‐בִּי.</span>
         </div>
 
         <div class="lesson">
+          <button class="line-play" type="button" aria-label="Play recording of line 4"></button>
           <span class="line hebrew" lang="he" dir="rtl">כָּל זְ‐מַן שֶׁ‐הַנְּ‐שָׁ‐מָה בְ‐קִרְ‐בִּי, מוֹ‐דֶה אֲ‐נִי לְ‐פָ‐נֶי‐ךָ,</span>
         </div>
 
         <div class="lesson">
+          <button class="line-play" type="button" aria-label="Play recording of line 5"></button>
           <span class="line hebrew" lang="he" dir="rtl">יְיָ אֱ‐לֹ‐הַי וֵא‐לֹ‐הֵי אֲ‐בוֹ‐תַי וְ‐אִ‐מּוֹ‐תַי, רִ‐בּוֹן כָּל הַ‐מַּ‐עֲ‐שִׂים, אֲ‐דוֹן כָּל הַ‐נְּ‐שָׁ‐מוֹת.</span>
         </div>
 
         <div class="lesson">
+          <button class="line-play" type="button" aria-label="Play recording of line 6"></button>
           <span class="line hebrew" lang="he" dir="rtl">בָּ‐רוּךְ אַ‐תָּה יְיָ, אֲ‐שֶׁר בְּ‐יָ‐דוֹ נֶ‐פֶשׁ כָּל חַי וְ‐רוּ‐חַ כָּל בְּ‐שַׂר אִישׁ.</span>
         </div>
       </div>
@@ -328,7 +341,7 @@
 
   <footer>
     <span class="hebrew" lang="he" dir="rtl">אֱלֹהַי נְשָׁמָה</span>
-    <span>Created for thoughtful morning practice. · Version 1.0.1</span>
+    <span>Created for thoughtful morning practice. · Version 1.1.0</span>
   </footer>
 
   <dialog class="studio" id="studio">
@@ -338,6 +351,10 @@
         <button class="studio-close" id="studio-close" type="button" aria-label="Close recording studio">×</button>
       </div>
       <div class="studio-progress" aria-hidden="true"><span id="studio-progress"></span></div>
+      <div class="recording-type" aria-label="Choose what to record">
+        <button id="record-words" type="button" aria-pressed="true">Words</button>
+        <button id="record-lines" type="button" aria-pressed="false">Lines</button>
+      </div>
       <p class="studio-count" id="studio-count"></p>
       <div class="studio-word hebrew" id="studio-word" lang="he" dir="rtl"></div>
       <p class="studio-status" id="studio-status" role="status">Ready to record</p>
@@ -393,6 +410,9 @@
     function renderAllLines() {
       const showSyllables = hyphenToggle.getAttribute('aria-pressed') === 'true';
       hebrewLines.forEach((line) => renderLine(line, showSyllables));
+      document.querySelectorAll('.line-play').forEach((button, index) => {
+        button.classList.toggle('has-audio', recordings.has(`line-${String(index + 1).padStart(2, '0')}`));
+      });
     }
 
     renderAllLines();
@@ -500,6 +520,15 @@
       });
     });
 
+    const allLines = Array.from(hebrewLines, (line, index) => ({
+      key: `line-${String(index + 1).padStart(2, '0')}`,
+      display: line.dataset.withoutSyllables
+    }));
+
+    document.querySelectorAll('.line-play').forEach((button, index) => {
+      button.addEventListener('click', () => playWord(allLines[index].key, button));
+    });
+
     const studio = document.getElementById('studio');
     const studioWord = document.getElementById('studio-word');
     const studioCount = document.getElementById('studio-count');
@@ -513,11 +542,16 @@
     const deleteButton = document.getElementById('delete-recording');
     const exportButton = document.getElementById('export-recordings');
     let currentWordIndex = 0;
+    let recordingMode = 'words';
     let mediaRecorder = null;
     let mediaStream = null;
     let recordedChunks = [];
     let studioAudioUrl = null;
     let studioAudioIsObjectUrl = false;
+
+    function currentRecordingItems() {
+      return recordingMode === 'lines' ? allLines : allWords;
+    }
 
     function updateStudioAudio(current) {
       const item = recordings.get(current.key);
@@ -542,15 +576,17 @@
     }
 
     function updateStudio(message) {
-      if (!allWords.length) return;
-      const current = allWords[currentWordIndex];
-      const completed = recordings.size;
+      const items = currentRecordingItems();
+      if (!items.length) return;
+      const current = items[currentWordIndex];
+      const completed = items.filter((item) => recordings.has(item.key)).length;
       studioWord.textContent = current.display;
-      studioCount.textContent = `Word ${currentWordIndex + 1} of ${allWords.length} · ${completed} recorded`;
-      studioProgress.style.width = `${(completed / allWords.length) * 100}%`;
+      studioWord.style.fontSize = recordingMode === 'lines' ? 'clamp(30px, 6vw, 46px)' : '';
+      studioCount.textContent = `${recordingMode === 'lines' ? 'Line' : 'Word'} ${currentWordIndex + 1} of ${items.length} · ${completed} recorded`;
+      studioProgress.style.width = `${(completed / items.length) * 100}%`;
       studioStatus.textContent = message || (recordings.has(current.key) ? 'Recorded — ready to replay or replace' : 'Ready to record');
       previousButton.disabled = currentWordIndex === 0;
-      nextButton.disabled = currentWordIndex === allWords.length - 1;
+      nextButton.disabled = currentWordIndex === items.length - 1;
       replayButton.disabled = !recordings.has(current.key);
       deleteButton.disabled = !recordings.has(current.key);
       exportButton.disabled = recordings.size === 0;
@@ -558,7 +594,7 @@
     }
 
     function goToWord(index) {
-      currentWordIndex = Math.max(0, Math.min(allWords.length - 1, index));
+      currentWordIndex = Math.max(0, Math.min(currentRecordingItems().length - 1, index));
       updateStudio();
     }
 
@@ -584,7 +620,8 @@
     }
 
     async function saveCurrentRecording() {
-      const current = allWords[currentWordIndex];
+      const items = currentRecordingItems();
+      const current = items[currentWordIndex];
       const mime = mediaRecorder.mimeType || 'audio/webm';
       const item = { key: current.key, blob: new Blob(recordedChunks, { type: mime }), mime, updatedAt: Date.now() };
       recordings.set(current.key, item);
@@ -594,20 +631,34 @@
       recordButton.setAttribute('aria-label', 'Start recording');
       renderAllLines();
       updateStudio('Saved');
-      if (currentWordIndex < allWords.length - 1) setTimeout(() => goToWord(currentWordIndex + 1), 450);
+      if (currentWordIndex < items.length - 1) setTimeout(() => goToWord(currentWordIndex + 1), 450);
     }
 
     recordButton.addEventListener('click', toggleRecording);
     previousButton.addEventListener('click', () => goToWord(currentWordIndex - 1));
     nextButton.addEventListener('click', () => goToWord(currentWordIndex + 1));
-    replayButton.addEventListener('click', () => playWord(allWords[currentWordIndex].key));
+    replayButton.addEventListener('click', () => playWord(currentRecordingItems()[currentWordIndex].key));
     deleteButton.addEventListener('click', async () => {
-      const key = allWords[currentWordIndex].key;
+      const key = currentRecordingItems()[currentWordIndex].key;
       recordings.delete(key);
       try { await databaseAction('readwrite', (store) => store.delete(key)); } catch (error) { console.warn(error); }
       if (publishedRecordings.has(key)) recordings.set(key, publishedRecordings.get(key));
       renderAllLines();
       updateStudio(publishedRecordings.has(key) ? 'Local replacement deleted — using published recording' : 'Recording deleted');
+    });
+    document.getElementById('record-words').addEventListener('click', () => {
+      recordingMode = 'words';
+      currentWordIndex = 0;
+      document.getElementById('record-words').setAttribute('aria-pressed', 'true');
+      document.getElementById('record-lines').setAttribute('aria-pressed', 'false');
+      updateStudio();
+    });
+    document.getElementById('record-lines').addEventListener('click', () => {
+      recordingMode = 'lines';
+      currentWordIndex = 0;
+      document.getElementById('record-words').setAttribute('aria-pressed', 'false');
+      document.getElementById('record-lines').setAttribute('aria-pressed', 'true');
+      updateStudio();
     });
     document.getElementById('studio-launch').addEventListener('click', () => {
       const password = window.prompt('Enter the Recording Studio password:');
@@ -665,14 +716,18 @@
     exportButton.addEventListener('click', async () => {
       const files = [];
       const manifest = [];
-      for (const [index, word] of allWords.entries()) {
-        const item = recordings.get(word.key);
+      const exportItems = [
+        ...allWords.map((item, index) => ({ ...item, filenameBase: `word-${String(index + 1).padStart(2, '0')}` })),
+        ...allLines.map((item, index) => ({ ...item, filenameBase: `line-${String(index + 1).padStart(2, '0')}` }))
+      ];
+      for (const recordingItem of exportItems) {
+        const item = recordings.get(recordingItem.key);
         if (!item) continue;
         const extension = item.mime.includes('ogg') ? 'ogg' : 'webm';
-        const filename = `word-${String(index + 1).padStart(2, '0')}.${extension}`;
+        const filename = `${recordingItem.filenameBase}.${extension}`;
         const audioBuffer = item.blob ? await item.blob.arrayBuffer() : await fetch(item.url).then((response) => response.arrayBuffer());
         files.push({ name: filename, data: new Uint8Array(audioBuffer) });
-        manifest.push({ hebrew: word.display, key: word.key, file: filename, mime: item.mime });
+        manifest.push({ hebrew: recordingItem.display, key: recordingItem.key, file: filename, mime: item.mime });
       }
       files.push({ name: 'manifest.json', data: new TextEncoder().encode(JSON.stringify(manifest, null, 2)) });
       const url = URL.createObjectURL(makeZip(files));

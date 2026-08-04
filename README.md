@@ -2,7 +2,7 @@
 
 An interactive Hebrew tutorial for the prayer *Elohai Neshama*, set in Frank Ruhl Libre.
 
-The page includes syllable practice, word-level audio playback, a browser-based recording studio, local recording storage, and support for published audio files on GitHub Pages.
+The page includes syllable practice, word- and line-level audio playback, a browser-based recording studio, local recording storage, and support for published audio files on GitHub Pages.
 
 ## Run locally
 

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A guided tutorial for learning the Hebrew prayer Elohai Neshama.">
-  <meta name="application-version" content="1.1.0">
+  <meta name="application-version" content="1.1.1">
   <title>Elohai Neshama · A Guided Prayer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -242,7 +242,7 @@
       .hero::after { display: none; }
       .prayer-card { border-radius: 130px 130px 24px 24px; }
       .meaning-grid { grid-template-columns: 1fr; }
-      .section-head { align-items: flex-start; flex-direction: column; }
+      .section-head { flex-wrap: wrap; gap: 12px; }
       .lesson { grid-template-columns: 1fr; gap: 13px; padding: 19px 58px 19px 15px; }
       .line-play { right: 7px; }
       .steps { grid-template-columns: 1fr; }
@@ -275,6 +275,10 @@
       <div class="section-head">
         <button class="hyphen-toggle" id="hyphen-toggle" type="button" aria-pressed="false">
           <span>With Syllables</span>
+          <span class="toggle-track" aria-hidden="true"></span>
+        </button>
+        <button class="hyphen-toggle" id="sound-toggle" type="button" aria-pressed="true">
+          <span>With Sound</span>
           <span class="toggle-track" aria-hidden="true"></span>
         </button>
       </div>
@@ -341,7 +345,7 @@
 
   <footer>
     <span class="hebrew" lang="he" dir="rtl">אֱלֹהַי נְשָׁמָה</span>
-    <span>Created for thoughtful morning practice. · Version 1.1.0</span>
+    <span>Created for thoughtful morning practice. · Version 1.1.1</span>
   </footer>
 
   <dialog class="studio" id="studio">
@@ -377,6 +381,7 @@
 
   <script>
     const hyphenToggle = document.getElementById('hyphen-toggle');
+    const soundToggle = document.getElementById('sound-toggle');
     const hebrewLines = document.querySelectorAll('.lesson .line');
     const recordings = new Map();
     const publishedRecordings = new Map();
@@ -421,6 +426,17 @@
       const showSyllables = hyphenToggle.getAttribute('aria-pressed') !== 'true';
       hyphenToggle.setAttribute('aria-pressed', String(showSyllables));
       renderAllLines();
+    });
+
+    soundToggle.addEventListener('click', () => {
+      const withSound = soundToggle.getAttribute('aria-pressed') !== 'true';
+      soundToggle.setAttribute('aria-pressed', String(withSound));
+      if (!withSound && activeAudio) {
+        activeAudio.audio.pause();
+        if (activeAudio.isObjectUrl) URL.revokeObjectURL(activeAudio.url);
+        activeAudio.element?.classList.remove('playing');
+        activeAudio = null;
+      }
     });
 
     function openDatabase() {
@@ -475,6 +491,7 @@
     }
 
     function playWord(key, element) {
+      if (soundToggle.getAttribute('aria-pressed') !== 'true') return;
       const item = recordings.get(key);
       if (!item) return;
       if (activeAudio) {

@@ -2,181 +2,259 @@
   {
     "hebrew": "אֱלֹהַי",
     "key": "אֱלֹהַי",
-    "file": "word-01.webm"
+    "file": "word-01.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "נְשָׁמָה",
     "key": "נְשָׁמָה",
-    "file": "word-02.webm"
+    "file": "word-02.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "שֶׁנָּתַתָּ",
     "key": "שֶׁנָּתַתָּ",
-    "file": "word-03.webm"
+    "file": "word-03.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "בִּי",
     "key": "בִּי",
-    "file": "word-04.webm"
+    "file": "word-04.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "טְהוֹרָה",
     "key": "טְהוֹרָה",
-    "file": "word-05.webm"
+    "file": "word-05.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "הִיא",
     "key": "הִיא",
-    "file": "word-06.webm"
+    "file": "word-06.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "אַתָּה",
     "key": "אַתָּה",
-    "file": "word-07.webm"
+    "file": "word-07.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "בְרָאתָהּ",
     "key": "בְרָאתָהּ",
-    "file": "word-08.webm"
+    "file": "word-08.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "יְצַרְתָּהּ",
     "key": "יְצַרְתָּהּ",
-    "file": "word-09.webm"
+    "file": "word-09.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "נְפַחְתָּהּ",
     "key": "נְפַחְתָּהּ",
-    "file": "word-10.webm"
+    "file": "word-10.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "וְאַתָּה",
     "key": "וְאַתָּה",
-    "file": "word-11.webm"
+    "file": "word-11.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "מְשַׁמְּרָהּ",
     "key": "מְשַׁמְּרָהּ",
-    "file": "word-12.webm"
+    "file": "word-12.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "בְּקִרְבִּי",
     "key": "בְּקִרְבִּי",
-    "file": "word-13.webm"
+    "file": "word-13.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "כָּל",
     "key": "כָּל",
-    "file": "word-14.webm"
+    "file": "word-14.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "זְמַן",
     "key": "זְמַן",
-    "file": "word-15.webm"
+    "file": "word-15.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "שֶׁהַנְּשָׁמָה",
     "key": "שֶׁהַנְּשָׁמָה",
-    "file": "word-16.webm"
-  },
-  {
-    "hebrew": "בְקִרְבִּי",
-    "key": "בְקִרְבִּי",
-    "file": "word-17.webm"
+    "file": "word-16.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "מוֹדֶה",
     "key": "מוֹדֶה",
-    "file": "word-18.webm"
+    "file": "word-17.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "אֲנִי",
     "key": "אֲנִי",
-    "file": "word-19.webm"
+    "file": "word-18.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "לְפָנֶיךָ",
     "key": "לְפָנֶיךָ",
-    "file": "word-20.webm"
+    "file": "word-19.webm",
+    "mime": "audio/webm"
+  },
+  {
+    "hebrew": "מוֹדָה",
+    "key": "מוֹדָה",
+    "file": "word-20.webm",
+    "mime": "audio/webm;codecs=opus"
   },
   {
     "hebrew": "יְיָ",
     "key": "יְיָ",
-    "file": "word-21.webm"
+    "file": "word-21.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "וֵאלֹהֵי",
     "key": "וֵאלֹהֵי",
-    "file": "word-22.webm"
+    "file": "word-22.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "אֲבוֹתַי",
     "key": "אֲבוֹתַי",
-    "file": "word-23.webm"
+    "file": "word-23.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "וְאִמּוֹתַי",
     "key": "וְאִמּוֹתַי",
-    "file": "word-24.webm"
+    "file": "word-24.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "רִבּוֹן",
     "key": "רִבּוֹן",
-    "file": "word-25.webm"
+    "file": "word-25.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "הַמַּעֲשִׂים",
     "key": "הַמַּעֲשִׂים",
-    "file": "word-26.webm"
+    "file": "word-26.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "אֲדוֹן",
     "key": "אֲדוֹן",
-    "file": "word-27.webm"
+    "file": "word-27.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "הַנְּשָׁמוֹת",
     "key": "הַנְּשָׁמוֹת",
-    "file": "word-28.webm"
+    "file": "word-28.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "בָּרוּךְ",
     "key": "בָּרוּךְ",
-    "file": "word-29.webm"
+    "file": "word-29.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "אֲשֶׁר",
     "key": "אֲשֶׁר",
-    "file": "word-30.webm"
+    "file": "word-30.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "בְּיָדוֹ",
     "key": "בְּיָדוֹ",
-    "file": "word-31.webm"
+    "file": "word-31.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "נֶפֶשׁ",
     "key": "נֶפֶשׁ",
-    "file": "word-32.webm"
+    "file": "word-32.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "חַי",
     "key": "חַי",
-    "file": "word-33.webm"
+    "file": "word-33.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "וְרוּחַ",
     "key": "וְרוּחַ",
-    "file": "word-34.webm"
+    "file": "word-34.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "בְּשַׂר",
     "key": "בְּשַׂר",
-    "file": "word-35.webm"
+    "file": "word-35.webm",
+    "mime": "audio/webm"
   },
   {
     "hebrew": "אִישׁ",
     "key": "אִישׁ",
-    "file": "word-36.webm"
+    "file": "word-36.webm",
+    "mime": "audio/webm"
+  },
+  {
+    "hebrew": "אֱלֹהַי, נְשָׁמָה שֶׁנָּתַתָּ בִּי טְהוֹרָה הִיא.",
+    "key": "line-01",
+    "file": "line-01.webm",
+    "mime": "audio/webm;codecs=opus"
+  },
+  {
+    "hebrew": "אַתָּה בְרָאתָהּ, אַתָּה יְצַרְתָּהּ, אַתָּה נְפַחְתָּהּ בִּי,",
+    "key": "line-02",
+    "file": "line-02.webm",
+    "mime": "audio/webm;codecs=opus"
+  },
+  {
+    "hebrew": "וְאַתָּה מְשַׁמְּרָהּ בְּקִרְבִּי.",
+    "key": "line-03",
+    "file": "line-03.webm",
+    "mime": "audio/webm;codecs=opus"
+  },
+  {
+    "hebrew": "כָּל זְמַן שֶׁהַנְּשָׁמָה בְּקִרְבִּי, מוֹדֶה אֲנִי לְפָנֶיךָ,",
+    "key": "line-04",
+    "file": "line-04.webm",
+    "mime": "audio/webm;codecs=opus"
+  },
+  {
+    "hebrew": "כָּל זְמַן שֶׁהַנְּשָׁמָה בְּקִרְבִּי, מוֹדָה אֲנִי לְפָנֶיךָ,",
+    "key": "line-05",
+    "file": "line-05.webm",
+    "mime": "audio/webm;codecs=opus"
+  },
+  {
+    "hebrew": "יְיָ אֱלֹהַי וֵאלֹהֵי אֲבוֹתַי וְאִמּוֹתַי, רִבּוֹן כָּל הַמַּעֲשִׂים, אֲדוֹן כָּל הַנְּשָׁמוֹת.",
+    "key": "line-06",
+    "file": "line-06.webm",
+    "mime": "audio/webm;codecs=opus"
+  },
+  {
+    "hebrew": "בָּרוּךְ אַתָּה יְיָ, אֲשֶׁר בְּיָדוֹ נֶפֶשׁ כָּל חַי וְרוּחַ כָּל בְּשַׂר אִישׁ.",
+    "key": "line-07",
+    "file": "line-07.webm",
+    "mime": "audio/webm;codecs=opus"
   }
 ]

@@ -111,7 +111,7 @@
     "hebrew": "לְפָנֶיךָ",
     "key": "לְפָנֶיךָ",
     "file": "word-19.webm",
-    "mime": "audio/webm"
+    "mime": "audio/webm;codecs=opus"
   },
   {
     "hebrew": "מוֹדָה",
